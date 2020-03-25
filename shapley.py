@@ -1,5 +1,7 @@
 """Calculate Shapley value."""
 
+import os
+
 from read_input import read_input
 
 from collections import defaultdict
@@ -61,5 +63,11 @@ def calc_shapley(input_dict):
 
 
 if __name__ == "__main__":
-    input_dict = read_input()
-    calc_shapley(input_dict)
+    input_file_name = "input.txt"
+    if not os.path.exists(input_file_name):
+        print(
+            f"{input_file_name} does not exist! Put AG submission output into {input_file_name}"
+        )
+    else:
+        input_dict = read_input(input_file_name)
+        calc_shapley(input_dict)

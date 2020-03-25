@@ -1,11 +1,11 @@
 """Read input to calculate Shapley value."""
 
 
-def read_input():
+def read_input(file_name="input.txt"):
     """Read input to calculate Shapley value."""
     input_dict = {}
 
-    with open("input.txt") as input_file:
+    with open(file_name) as input_file:
         for line in filter(
                 lambda line: line.startswith("student test case") and
                 "caused error" not in line,
